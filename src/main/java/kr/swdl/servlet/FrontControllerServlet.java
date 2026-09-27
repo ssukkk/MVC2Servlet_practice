@@ -16,7 +16,7 @@ public class FrontControllerServlet extends HttpServlet {
 					throws ServletException, IOException {
 		// cmd
 		String cmd=request.getParameter("cmd");
-		System.out.println("cmd : "+ cmd); //개발자 확인용. 서비스 운영 시 삭제 요망
+		System.out.println("cmd : "+ cmd); //개발자 확인용. 서비스 운영 시 삭제 요망. cmd명을 잘 받았냐? 확인
 		//해당 Action 전달 받아서 실행 TDD
 		Action a=ActionFactory.getAction(cmd);
 		//해당 페이지로 이동
