@@ -39,15 +39,19 @@ public class CustomerService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			try {
-				conn.rollback();
+				if (conn!= null)
+					conn.rollback();
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		} finally {
 			try {
-				conn.setAutoCommit(true);
-				conn.close();
+				if (conn != null) {
+
+					conn.setAutoCommit(false);
+					conn.close();
+				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
